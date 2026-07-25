@@ -14,7 +14,7 @@ export function NodesPage() {
             Nodes & <span className="text-primary">Hardware</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            AXIOM NODES hosts Minecraft servers exclusively on high-frequency enterprise hardware to deliver maximum TPS and instant world generation.
+            AXIOM SOLUTIONS hosts Minecraft servers exclusively on high-frequency enterprise hardware to deliver maximum TPS and instant world generation.
           </p>
         </div>
 

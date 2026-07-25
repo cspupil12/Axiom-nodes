@@ -45,7 +45,7 @@ export function TeamPage() {
             Staff & <span className="text-primary">Team</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            Meet the system administrators and Minecraft profiler specialists keeping your servers online with 20 TPS performance.
+            AXIOM SOLUTIONS is built by veteran Minecraft system administrators, network security engineers, and modpack profiler experts keeping your servers online with 20 TPS performance.
           </p>
         </div>
 

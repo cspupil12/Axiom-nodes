@@ -11,10 +11,10 @@ export function AboutPage() {
         <div className="max-w-3xl mb-16">
           <span className="text-primary text-xs font-semibold uppercase tracking-widest block mb-2">Our Mission & Standards</span>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight uppercase mb-6">
-            About <span className="text-primary">AXIOM NODES</span>
+            About <span className="text-primary">AXIOM SOLUTIONS</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-            AXIOM NODES was built by Minecraft server developers and system administrators tired of overpriced hosting providers offering oversold CPUs and slow customer support.
+            AXIOM SOLUTIONS was built by Minecraft server developers and system administrators tired of overpriced hosting providers offering oversold CPUs and slow customer support.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export function AboutPage() {
               We believe every Minecraft community owner — whether running a small survival server with friends or a massive SMP network — deserves ultra-fast hardware at fair, transparent pricing.
             </p>
             <p>
-              By utilizing top-frequency Intel i9 processors, NVMe SSD arrays, and optimized Pterodactyl control panels, AXIOM NODES ensures stable 20 TPS even under heavy player loads and modpacks.
+              By utilizing top-frequency Intel i9 processors, NVMe SSD arrays, and optimized Pterodactyl control panels, AXIOM SOLUTIONS ensures stable 20 TPS even under heavy player loads and modpacks.
             </p>
             <p>
               Our 24/7 Discord support team assists you directly with plugin errors, Paper/Purpur configuration tuning, and backup restores.

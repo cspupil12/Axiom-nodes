@@ -16,7 +16,7 @@ export function Navbar() {
       {/* Left: Logo */}
       <Link to="/" className="text-foreground text-xl font-bold tracking-tight hover:opacity-90 transition-opacity flex items-center gap-2">
         <span>AXIOM</span>
-        <span className="text-primary">NODES</span>
+        <span className="text-primary">SOLUTIONS</span>
       </Link>
 
       {/* Center: Nav links */}

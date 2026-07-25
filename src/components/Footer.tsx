@@ -8,7 +8,7 @@ export function Footer() {
         {/* Brand Column */}
         <div className="lg:col-span-2 space-y-4">
           <Link to="/" className="text-xl font-bold tracking-tight inline-block text-foreground">
-            AXIOM<span className="text-primary"> NODES</span>
+            AXIOM<span className="text-primary"> SOLUTIONS</span>
           </Link>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
             High-Performance Minecraft Server Hosting powered by Intel i9 processors, NVMe SSD storage arrays, sub-millisecond network latency, and 99.99% guaranteed uptime.
@@ -77,7 +77,7 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto border-t border-border/40 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-muted-foreground gap-4">
-        <p>© {new Date().getFullYear()} AXIOM NODES Hosting. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} AXIOM SOLUTIONS Hosting. All rights reserved.</p>
         <div className="flex items-center gap-6">
           <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>

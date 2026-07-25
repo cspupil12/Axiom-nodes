@@ -16,7 +16,7 @@ export function HomePage() {
             className="opacity-0 animate-fade-up text-[clamp(3rem,8vw,6rem)] font-bold leading-[1.05] tracking-[-0.05em] text-foreground mb-2 md:mb-4 uppercase"
             style={{ animationDelay: "0.2s" }}
           >
-            AXIOM<span className="text-primary"> NODES</span>
+            AXIOM<span className="text-primary"> SOLUTIONS</span>
           </h1>
 
           {/* Subheading (delay 0.4s) */}
@@ -89,7 +89,7 @@ export function HomePage() {
                 Built for Modpacks, SMPs, & Competitive Servers
               </h2>
               <p className="text-muted-foreground text-base leading-relaxed mb-6">
-                Don't let TPS drops ruin your players' experience. AXIOM NODES runs on top-tier Intel i9 processors paired with NVMe SSDs and unmetered DDoS mitigation to guarantee flawless 20 TPS performance.
+                Don't let TPS drops ruin your players' experience. AXIOM SOLUTIONS runs on top-tier Intel i9 processors paired with NVMe SSDs and unmetered DDoS mitigation to guarantee flawless 20 TPS performance.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-3">
