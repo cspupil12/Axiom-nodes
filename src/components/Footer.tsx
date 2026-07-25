@@ -30,6 +30,9 @@ export function Footer() {
               <Link to="/plans" className="text-foreground/80 hover:text-primary transition-colors">Server Plans</Link>
             </li>
             <li>
+              <Link to="/panel" className="text-foreground/80 hover:text-primary transition-colors">Game Panel</Link>
+            </li>
+            <li>
               <Link to="/about" className="text-foreground/80 hover:text-primary transition-colors">About AXIOM</Link>
             </li>
             <li>
