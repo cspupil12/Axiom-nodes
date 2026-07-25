@@ -40,7 +40,6 @@ export default function App() {
             <Route path="/panel" element={<PanelPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/nodes" element={<NodesPage />} />
-            <Route path="/team" element={<TeamPage />} />
             <Route path="/contacts" element={<ContactsPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>

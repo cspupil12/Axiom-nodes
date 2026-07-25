@@ -39,9 +39,6 @@ export function Footer() {
               <Link to="/nodes" className="text-foreground/80 hover:text-primary transition-colors">Nodes & Hardware</Link>
             </li>
             <li>
-              <Link to="/team" className="text-foreground/80 hover:text-primary transition-colors">Staff & Team</Link>
-            </li>
-            <li>
               <Link to="/contacts" className="text-foreground/80 hover:text-primary transition-colors">Support & Order</Link>
             </li>
           </ul>
