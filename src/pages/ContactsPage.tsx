@@ -1,23 +1,35 @@
 import React, { useState } from "react"
-import { ShieldCheck, MessageSquare, Send, CheckCircle2, Zap, Clock, Cpu } from "lucide-react"
+import { ShieldCheck, MessageSquare, Send, CheckCircle2, Zap, Clock, Loader2, AlertCircle } from "lucide-react"
+import { sendDiscordWebhook } from "@/services/discordWebhook"
 
 const DISCORD_BUY_URL = "https://discord.gg/T6kZGrsHG4"
 
 export function ContactsPage() {
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
   const [formData, setFormData] = useState({
     name: "",
     discordTag: "",
     email: "",
     plan: "Axe Plan (8GB RAM - ₹80/mo)",
-    serverType: "Paper / Purpur (Optimized)",
-    playerSlots: "20 - 50 Players",
     notes: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setFormSubmitted(true)
+    setSubmitting(true)
+    setErrorMessage(null)
+
+    const success = await sendDiscordWebhook(formData)
+
+    setSubmitting(false)
+    if (success) {
+      setFormSubmitted(true)
+    } else {
+      setErrorMessage("Failed to dispatch webhook. Please try again or contact us directly on Discord.")
+    }
   }
 
   return (
@@ -85,16 +97,25 @@ export function ContactsPage() {
           <div className="lg:col-span-7">
             <div className="bg-secondary/40 border border-border/80 p-8 md:p-10 rounded-xl">
               {formSubmitted ? (
-                <div className="py-16 text-center space-y-4">
+                <div className="py-16 text-center space-y-4 animate-fade-in">
                   <ShieldCheck className="w-20 h-20 text-primary mx-auto" />
-                  <h3 className="text-3xl font-bold uppercase">Order Inquiry Received</h3>
-                  <p className="text-muted-foreground text-sm max-w-md mx-auto">
-                    Thank you, <span className="text-foreground font-semibold">{formData.name}</span>. Our team will contact your Discord <span className="text-primary font-semibold">({formData.discordTag || formData.email})</span> shortly to fulfill your <span className="text-foreground font-semibold">{formData.plan}</span> server order.
+                  <h3 className="text-3xl font-bold uppercase">Order Inquiry Sent!</h3>
+                  <p className="text-muted-foreground text-sm max-w-md mx-auto leading-relaxed">
+                    Thank you, <span className="text-foreground font-semibold">{formData.name}</span>. Your inquiry for <span className="text-primary font-semibold">{formData.plan}</span> has been dispatched to our Discord operations channel. Our team will contact your Discord <span className="text-foreground font-semibold">({formData.discordTag || formData.email})</span> shortly.
                   </p>
                   <div className="pt-6">
                     <button
-                      onClick={() => setFormSubmitted(false)}
-                      className="bg-secondary hover:bg-secondary/80 text-foreground px-8 py-3 rounded text-xs font-semibold uppercase tracking-wider cursor-pointer"
+                      onClick={() => {
+                        setFormSubmitted(false)
+                        setFormData({
+                          name: "",
+                          discordTag: "",
+                          email: "",
+                          plan: "Axe Plan (8GB RAM - ₹80/mo)",
+                          notes: "",
+                        })
+                      }}
+                      className="bg-secondary hover:bg-secondary/80 text-foreground px-8 py-3 rounded text-xs font-semibold uppercase tracking-wider cursor-pointer transition-colors"
                     >
                       Submit Another Inquiry
                     </button>
@@ -105,6 +126,13 @@ export function ContactsPage() {
                   <h3 className="text-2xl font-bold uppercase border-b border-border/60 pb-4">
                     Custom Server Configurator & Inquiry
                   </h3>
+
+                  {errorMessage && (
+                    <div className="bg-red-950/60 border border-red-500/60 p-4 rounded text-xs text-red-200 flex items-center gap-3">
+                      <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -192,9 +220,18 @@ export function ContactsPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-primary text-primary-foreground font-bold py-4 rounded text-sm uppercase tracking-wider hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                    disabled={submitting}
+                    className="w-full bg-primary text-primary-foreground font-bold py-4 rounded text-sm uppercase tracking-wider hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-primary/20 disabled:opacity-50"
                   >
-                    <Send className="w-4 h-4" /> Submit Inquiry
+                    {submitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" /> Sending to Discord...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" /> Submit Inquiry
+                      </>
+                    )}
                   </button>
                 </form>
               )}
