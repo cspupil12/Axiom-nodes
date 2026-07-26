@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import { ShieldAlert, ExternalLink, UserPlus, MessageSquare, AlertTriangle, CheckCircle2, Lock, Eye, EyeOff, Server } from "lucide-react"
+import { ShieldAlert, ExternalLink, UserPlus, MessageSquare, AlertTriangle, CheckCircle2, Lock, Server } from "lucide-react"
 
 const PANEL_URL = "https://panel.axiomsolution.site/"
 const DISCORD_URL = "https://discord.gg/T6kZGrsHG4"
@@ -22,7 +21,7 @@ export function PanelPage() {
         </div>
 
         {/* ⚠️ SECURITY WARNING BANNER */}
-        <div className="bg-red-950/60 border border-red-500/60 rounded-xl p-6 mb-10 flex items-start gap-4">
+        <div className="bg-red-950/60 border border-red-500/60 rounded-xl p-6 mb-10 flex items-start gap-4 shadow-lg shadow-red-950/40">
           <ShieldAlert className="w-8 h-8 text-red-400 shrink-0 mt-0.5" />
           <div>
             <h2 className="text-red-400 font-bold text-lg uppercase mb-2 tracking-wide">
